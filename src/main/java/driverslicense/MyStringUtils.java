@@ -1,5 +1,7 @@
 package driverslicense;
 
+import java.util.ArrayList;
+
 /**
  * Created by mikailaakeredolu on 5/23/16.
  */
@@ -57,13 +59,19 @@ public static String[] breakUpArrayOfStrings(String stringToTakeIn){
      return temp.trim();
  }
 
- public static String[] subArray(String stringToReturn){
+ public static ArrayList<String> subArray(String stringToReturn){
 
-     String[] myArray = stringToReturn.split(",");
-     for(int x = 0; x < myArray.length; x++){
+     ArrayList<String> myArray = new ArrayList<>();
 
-         for(int y = x+1; y <= myArray.length; y++){
-             myArray.subList(y,x);
+
+     for(int x = 0; x < stringToReturn.length(); x++){
+
+         for(int y = 1; y <= stringToReturn.length()-x; y++){
+
+             String combo = (stringToReturn.substring(x , x+y));
+             myArray.add(combo);
+             System.out.println(combo);
+
          }
      }
 

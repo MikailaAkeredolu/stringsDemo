@@ -4,6 +4,8 @@ import driverslicense.MyStringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 /**
@@ -55,8 +57,8 @@ public class MyStringUtilsTest {
     public void subArrayTest() throws Exception {
         String sample = "she";
         String[] expectedValue = {"s","sh","she","h","he","e"};
-        String[] actualValue = MyStringUtils.subArray(sample);
-        Assert.assertArrayEquals(expectedValue,actualValue);
+        ArrayList actualValue = MyStringUtils.subArray(sample);
+        Assert.assertArrayEquals(expectedValue,actualValue.toArray());
 
     }
 
